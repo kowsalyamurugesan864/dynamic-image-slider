@@ -1,110 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dynamic Image Slider - Multi Style</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Image Slider Website</title>
 
-  <!-- Link CSS -->
-  <link rel="stylesheet" href="style.css" />
+<style>
+/* ====== GENERAL STYLES ====== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f2f2f2;
+  color: #333;
+}
+header {
+  background: #007bff;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #007bff;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* ====== LOGIN PAGE ====== */
+.login-container {
+  max-width: 400px;
+  margin: 120px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.login-container input {
+  display: block;
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px;
+}
+.login-container button {
+  padding: 10px 20px;
+  background: #007bff;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.login-container button:hover {
+  background: #0056b3;
+}
+.hint {
+  margin-top: 10px;
+  font-size: 14px;
+  color: gray;
+}
+
+/* ====== HOME PAGE SLIDER ====== */
+.slider {
+  max-width: 800px;
+  margin: 60px auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.slide {
+  width: 100%;
+  display: none;
+  border-radius: 10px;
+}
+.slide.active {
+  display: block;
+}
+
+/* ====== PAGES ====== */
+.page {
+  display: none;
+  padding: 20px;
+}
+.page.active {
+  display: block;
+}
+.profile {
+  text-align: center;
+  padding: 40px;
+}
+.profile img {
+  width: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+main p {
+  max-width: 800px;
+  margin: 20px auto;
+  font-size: 18px;
+  line-height: 1.6;
+}
+</style>
 </head>
 
 <body>
-  <!-- ====== LOGIN PAGE ====== -->
-  <div id="loginPage" class="page active">
-    <div class="login-container">
-      <h2>Login to Continue</h2>
-      <input type="text" id="userid" placeholder="User ID" required />
-      <input type="password" id="password" placeholder="Password" required />
-      <button onclick="login()">Login</button>
-      <p class="hint">Demo Login: <b>user123</b> / <b>pass123</b></p>
-    </div>
+
+<!-- ====== LOGIN PAGE ====== -->
+<div id="loginPage" class="page active">
+  <div class="login-container">
+    <h2>Login to Continue</h2>
+    <input type="text" id="userid" placeholder="User ID" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button onclick="login()">Login</button>
+    <p class="hint">Demo Login: <b>user123</b> / <b>pass123</b></p>
   </div>
+</div>
 
-  <!-- ====== HOME PAGE ====== -->
-  <div id="homePage" class="page">
-    <header>
-      <h1>Welcome to the Dynamic Website</h1>
-      <nav>
-        <a href="#" onclick="showPage('homePage')">Home</a>
-        <a href="#" onclick="showPage('aboutPage')">About</a>
-        <a href="#" onclick="showPage('profilePage')">Profile</a>
-        <a href="#" onclick="logout()">Logout</a>
-      </nav>
-      <select class="theme-select" onchange="changeTheme(this.value)">
-        <option value="default">Blue</option>
-        <option value="dark">Dark</option>
-        <option value="green">Green</option>
-        <option value="purple">Purple</option>
-      </select>
-    </header>
+<!-- ====== HOME PAGE ====== -->
+<div id="homePage" class="page">
+  <header>
+    <h1>Welcome to the Dynamic Website</h1>
+    <nav>
+      <a href="#" onclick="showPage('homePage')">Home</a>
+      <a href="#" onclick="showPage('aboutPage')">About</a>
+      <a href="#" onclick="showPage('profilePage')">Profile</a>
+      <a href="#" onclick="logout()">Logout</a>
+    </nav>
+  </header>
 
-    <section class="slider">
-      <img src="https://picsum.photos/id/1018/800/400" class="slide active" />
-      <img src="https://picsum.photos/id/1025/800/400" class="slide" />
-      <img src="https://picsum.photos/id/1033/800/400" class="slide" />
-    </section>
+  <section class="slider">
+    <img src="https://picsum.photos/id/1018/800/400" class="slide active">
+    <img src="https://picsum.photos/id/1025/800/400" class="slide">
+    <img src="https://picsum.photos/id/1033/800/400" class="slide">
+  </section>
 
-    <footer>© 2025 Dynamic Website</footer>
-  </div>
+  <footer>© 2025 Dynamic Website</footer>
+</div>
 
-  <!-- ====== ABOUT PAGE ====== -->
-  <div id="aboutPage" class="page">
-    <header>
-      <h1>About Us</h1>
-      <nav>
-        <a href="#" onclick="showPage('homePage')">Home</a>
-        <a href="#" onclick="showPage('aboutPage')">About</a>
-        <a href="#" onclick="showPage('profilePage')">Profile</a>
-        <a href="#" onclick="logout()">Logout</a>
-      </nav>
-      <select class="theme-select" onchange="changeTheme(this.value)">
-        <option value="default">Blue</option>
-        <option value="dark">Dark</option>
-        <option value="green">Green</option>
-        <option value="purple">Purple</option>
-      </select>
-    </header>
+<!-- ====== ABOUT PAGE ====== -->
+<div id="aboutPage" class="page">
+  <header>
+    <h1>About Us</h1>
+    <nav>
+      <a href="#" onclick="showPage('homePage')">Home</a>
+      <a href="#" onclick="showPage('aboutPage')">About</a>
+      <a href="#" onclick="showPage('profilePage')">Profile</a>
+      <a href="#" onclick="logout()">Logout</a>
+    </nav>
+  </header>
 
-    <main>
-      <p>
-        This is a dynamic image slider website with multiple visual styles. You
-        can log in, explore different pages, and change the entire color theme
-        instantly using the selector above!
-      </p>
-    </main>
+  <main>
+    <p>Welcome to our dynamic image slider website. This single-page web app demonstrates how HTML, CSS, and JavaScript can create a clean, simple experience with login validation, navigation, and image animation — all without a server!</p>
+  </main>
 
-    <footer>© 2025 Dynamic Website</footer>
-  </div>
+  <footer>© 2025 Dynamic Website</footer>
+</div>
 
-  <!-- ====== PROFILE PAGE ====== -->
-  <div id="profilePage" class="page">
-    <header>
-      <h1>User Profile</h1>
-      <nav>
-        <a href="#" onclick="showPage('homePage')">Home</a>
-        <a href="#" onclick="showPage('aboutPage')">About</a>
-        <a href="#" onclick="showPage('profilePage')">Profile</a>
-        <a href="#" onclick="logout()">Logout</a>
-      </nav>
-      <select class="theme-select" onchange="changeTheme(this.value)">
-        <option value="default">Blue</option>
-        <option value="dark">Dark</option>
-        <option value="green">Green</option>
-        <option value="purple">Purple</option>
-      </select>
-    </header>
+<!-- ====== PROFILE PAGE ====== -->
+<div id="profilePage" class="page">
+  <header>
+    <h1>User Profile</h1>
+    <nav>
+      <a href="#" onclick="showPage('homePage')">Home</a>
+      <a href="#" onclick="showPage('aboutPage')">About</a>
+      <a href="#" onclick="showPage('profilePage')">Profile</a>
+      <a href="#" onclick="logout()">Logout</a>
+    </nav>
+  </header>
 
-    <main class="profile">
-      <img src="https://picsum.photos/id/1005/150" alt="Profile Picture" />
-      <h2>User: user123</h2>
-      <p>Email: user123@example.com</p>
-    </main>
+  <main class="profile">
+    <img src="https://picsum.photos/id/1005/150" alt="Profile Picture">
+    <h2>User: user123</h2>
+    <p>Email: user123@example.com</p>
+  </main>
 
-    <footer>© 2025 Dynamic Website</footer>
-  </div>
+  <footer>© 2025 Dynamic Website</footer>
+</div>
 
-  <!-- Link JavaScript -->
-  <script src="script.js"></script>
+<script>
+/* ====== LOGIN FUNCTION ====== */
+function login() {
+  const user = document.getElementById('userid').value;
+  const pass = document.getElementById('password').value;
+
+  if (user === 'user123' && pass === 'pass123') {
+    localStorage.setItem('loggedIn', 'true');
+    showPage('homePage');
+  } else {
+    alert('Invalid credentials! Try user123 / pass123');
+  }
+}
+
+/* ====== LOGOUT ====== */
+function logout() {
+  localStorage.removeItem('loggedIn');
+  showPage('loginPage');
+  alert('You have been logged out.');
+}
+
+/* ====== NAVIGATION HANDLER ====== */
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(pageId).classList.add('active');
+}
+
+/* ====== IMAGE SLIDER ====== */
+let currentSlide = 0;
+setInterval(() => {
+  let slides = document.querySelectorAll('.slide');
+  if (slides.length === 0) return;
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add('active');
+}, 3000);
+
+/* ====== AUTO LOGIN CHECK ====== */
+window.onload = () => {
+  if (localStorage.getItem('loggedIn') === 'true') {
+    showPage('homePage');
+  } else {
+    showPage('loginPage');
+  }
+};
+</script>
+
 </body>
 </html>
