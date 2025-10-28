@@ -11,7 +11,7 @@ function login() {
   }
 }
 
-/* ====== LOGOUT ====== */
+
 function logout() {
   localStorage.removeItem("loggedIn");
   showPage("loginPage");
@@ -52,4 +52,5 @@ window.onload = () => {
   changeTheme(savedTheme);
   document.querySelectorAll(".theme-select").forEach((sel) => (sel.value = savedTheme));
 };
+
 
