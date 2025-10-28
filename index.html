@@ -6,7 +6,7 @@
 <title>Dynamic Image Slider Website</title>
 
 <style>
-/* ====== GENERAL STYLES ====== */
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -38,7 +38,7 @@ footer {
   width: 100%;
 }
 
-/* ====== LOGIN PAGE ====== */
+
 .login-container {
   max-width: 400px;
   margin: 120px auto;
@@ -71,7 +71,7 @@ footer {
   color: gray;
 }
 
-/* ====== HOME PAGE SLIDER ====== */
+
 .slider {
   max-width: 800px;
   margin: 60px auto;
@@ -88,7 +88,7 @@ footer {
   display: block;
 }
 
-/* ====== PAGES ====== */
+
 .page {
   display: none;
   padding: 20px;
@@ -116,7 +116,7 @@ main p {
 
 <body>
 
-<!-- ====== LOGIN PAGE ====== -->
+
 <div id="loginPage" class="page active">
   <div class="login-container">
     <h2>Login to Continue</h2>
@@ -127,7 +127,7 @@ main p {
   </div>
 </div>
 
-<!-- ====== HOME PAGE ====== -->
+
 <div id="homePage" class="page">
   <header>
     <h1>Welcome to the Dynamic Website</h1>
@@ -148,7 +148,7 @@ main p {
   <footer>© 2025 Dynamic Website</footer>
 </div>
 
-<!-- ====== ABOUT PAGE ====== -->
+
 <div id="aboutPage" class="page">
   <header>
     <h1>About Us</h1>
@@ -167,7 +167,7 @@ main p {
   <footer>© 2025 Dynamic Website</footer>
 </div>
 
-<!-- ====== PROFILE PAGE ====== -->
+
 <div id="profilePage" class="page">
   <header>
     <h1>User Profile</h1>
@@ -189,7 +189,7 @@ main p {
 </div>
 
 <script>
-/* ====== LOGIN FUNCTION ====== */
+
 function login() {
   const user = document.getElementById('userid').value;
   const pass = document.getElementById('password').value;
@@ -202,7 +202,7 @@ function login() {
   }
 }
 
-/* ====== LOGOUT ====== */
+
 function logout() {
   localStorage.removeItem('loggedIn');
   showPage('loginPage');
@@ -215,7 +215,7 @@ function showPage(pageId) {
   document.getElementById(pageId).classList.add('active');
 }
 
-/* ====== IMAGE SLIDER ====== */
+
 let currentSlide = 0;
 setInterval(() => {
   let slides = document.querySelectorAll('.slide');
@@ -225,7 +225,7 @@ setInterval(() => {
   slides[currentSlide].classList.add('active');
 }, 3000);
 
-/* ====== AUTO LOGIN CHECK ====== */
+
 window.onload = () => {
   if (localStorage.getItem('loggedIn') === 'true') {
     showPage('homePage');
@@ -236,4 +236,5 @@ window.onload = () => {
 </script>
 
 </body>
+
 </html>
