@@ -1,4 +1,4 @@
-/* ====== LOGIN FUNCTION ====== */
+
 function login() {
   const user = document.getElementById("userid").value;
   const pass = document.getElementById("password").value;
@@ -18,13 +18,13 @@ function logout() {
   alert("You have been logged out.");
 }
 
-/* ====== PAGE NAVIGATION ====== */
+
 function showPage(pageId) {
   document.querySelectorAll(".page").forEach((p) => p.classList.remove("active"));
   document.getElementById(pageId).classList.add("active");
 }
 
-/* ====== IMAGE SLIDER ====== */
+
 let currentSlide = 0;
 setInterval(() => {
   let slides = document.querySelectorAll(".slide");
@@ -34,13 +34,13 @@ setInterval(() => {
   slides[currentSlide].classList.add("active");
 }, 3000);
 
-/* ====== THEME HANDLER ====== */
+
 function changeTheme(theme) {
   document.body.className = theme === "default" ? "" : theme;
   localStorage.setItem("theme", theme);
 }
 
-/* ====== AUTO LOGIN & THEME RESTORE ====== */
+
 window.onload = () => {
   if (localStorage.getItem("loggedIn") === "true") {
     showPage("homePage");
@@ -52,3 +52,4 @@ window.onload = () => {
   changeTheme(savedTheme);
   document.querySelectorAll(".theme-select").forEach((sel) => (sel.value = savedTheme));
 };
+
