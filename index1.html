@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dynamic Image Slider - Multi Style</title>
+
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- ====== LOGIN PAGE ====== -->
+  <div id="loginPage" class="page active">
+    <div class="login-container">
+      <h2>Login to Continue</h2>
+      <input type="text" id="userid" placeholder="User ID" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button onclick="login()">Login</button>
+      <p class="hint">Demo Login: <b>user123</b> / <b>pass123</b></p>
+    </div>
+  </div>
+
+  <!-- ====== HOME PAGE ====== -->
+  <div id="homePage" class="page">
+    <header>
+      <h1>Welcome to the Dynamic Website</h1>
+      <nav>
+        <a href="#" onclick="showPage('homePage')">Home</a>
+        <a href="#" onclick="showPage('aboutPage')">About</a>
+        <a href="#" onclick="showPage('profilePage')">Profile</a>
+        <a href="#" onclick="logout()">Logout</a>
+      </nav>
+      <select class="theme-select" onchange="changeTheme(this.value)">
+        <option value="default">Blue</option>
+        <option value="dark">Dark</option>
+        <option value="green">Green</option>
+        <option value="purple">Purple</option>
+      </select>
+    </header>
+
+    <section class="slider">
+      <img src="https://picsum.photos/id/1018/800/400" class="slide active" />
+      <img src="https://picsum.photos/id/1025/800/400" class="slide" />
+      <img src="https://picsum.photos/id/1033/800/400" class="slide" />
+    </section>
+
+    <footer>© 2025 Dynamic Website</footer>
+  </div>
+
+  <!-- ====== ABOUT PAGE ====== -->
+  <div id="aboutPage" class="page">
+    <header>
+      <h1>About Us</h1>
+      <nav>
+        <a href="#" onclick="showPage('homePage')">Home</a>
+        <a href="#" onclick="showPage('aboutPage')">About</a>
+        <a href="#" onclick="showPage('profilePage')">Profile</a>
+        <a href="#" onclick="logout()">Logout</a>
+      </nav>
+      <select class="theme-select" onchange="changeTheme(this.value)">
+        <option value="default">Blue</option>
+        <option value="dark">Dark</option>
+        <option value="green">Green</option>
+        <option value="purple">Purple</option>
+      </select>
+    </header>
+
+    <main>
+      <p>
+        This is a dynamic image slider website with multiple visual styles. You
+        can log in, explore different pages, and change the entire color theme
+        instantly using the selector above!
+      </p>
+    </main>
+
+    <footer>© 2025 Dynamic Website</footer>
+  </div>
+
+  <!-- ====== PROFILE PAGE ====== -->
+  <div id="profilePage" class="page">
+    <header>
+      <h1>User Profile</h1>
+      <nav>
+        <a href="#" onclick="showPage('homePage')">Home</a>
+        <a href="#" onclick="showPage('aboutPage')">About</a>
+        <a href="#" onclick="showPage('profilePage')">Profile</a>
+        <a href="#" onclick="logout()">Logout</a>
+      </nav>
+      <select class="theme-select" onchange="changeTheme(this.value)">
+        <option value="default">Blue</option>
+        <option value="dark">Dark</option>
+        <option value="green">Green</option>
+        <option value="purple">Purple</option>
+      </select>
+    </header>
+
+    <main class="profile">
+      <img src="https://picsum.photos/id/1005/150" alt="Profile Picture" />
+      <h2>User: user123</h2>
+      <p>Email: user123@example.com</p>
+    </main>
+
+    <footer>© 2025 Dynamic Website</footer>
+  </div>
+
+  <!-- Link JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
