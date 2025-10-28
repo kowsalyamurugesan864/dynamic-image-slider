@@ -1,4 +1,4 @@
-/* ====== BASE STYLES ====== */
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -34,7 +34,7 @@ footer {
   width: 100%;
 }
 
-/* ====== LOGIN PAGE ====== */
+
 .login-container {
   max-width: 400px;
   margin: 120px auto;
@@ -67,7 +67,7 @@ footer {
   color: gray;
 }
 
-/* ====== HOME PAGE SLIDER ====== */
+
 .slider {
   max-width: 800px;
   margin: 60px auto;
@@ -84,7 +84,7 @@ footer {
   display: block;
 }
 
-/* ====== PAGE STRUCTURE ====== */
+
 .page {
   display: none;
   padding-bottom: 80px;
@@ -109,7 +109,7 @@ main p {
   line-height: 1.6;
 }
 
-/* ====== THEME SELECTOR ====== */
+
 .theme-select {
   position: absolute;
   top: 15px;
@@ -120,7 +120,7 @@ main p {
   font-weight: bold;
 }
 
-/* ====== COLOR THEMES ====== */
+
 :root {
   --primary: #007bff;
   --primary-dark: #0056b3;
@@ -148,3 +148,4 @@ body.purple {
   --bg: #f8f4ff;
   --text: #222;
 }
+
