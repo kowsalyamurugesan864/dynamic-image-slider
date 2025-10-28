@@ -1,0 +1,150 @@
+/* ====== BASE STYLES ====== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+header {
+  background: var(--primary);
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: var(--primary);
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* ====== LOGIN PAGE ====== */
+.login-container {
+  max-width: 400px;
+  margin: 120px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.login-container input {
+  display: block;
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px;
+}
+.login-container button {
+  padding: 10px 20px;
+  background: var(--primary);
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.login-container button:hover {
+  background: var(--primary-dark);
+}
+.hint {
+  margin-top: 10px;
+  font-size: 14px;
+  color: gray;
+}
+
+/* ====== HOME PAGE SLIDER ====== */
+.slider {
+  max-width: 800px;
+  margin: 60px auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.slide {
+  width: 100%;
+  display: none;
+  border-radius: 10px;
+}
+.slide.active {
+  display: block;
+}
+
+/* ====== PAGE STRUCTURE ====== */
+.page {
+  display: none;
+  padding-bottom: 80px;
+}
+.page.active {
+  display: block;
+}
+
+.profile {
+  text-align: center;
+  padding: 40px;
+}
+.profile img {
+  width: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+main p {
+  max-width: 800px;
+  margin: 20px auto;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* ====== THEME SELECTOR ====== */
+.theme-select {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  font-weight: bold;
+}
+
+/* ====== COLOR THEMES ====== */
+:root {
+  --primary: #007bff;
+  --primary-dark: #0056b3;
+  --bg: #f2f2f2;
+  --text: #333;
+}
+
+body.dark {
+  --primary: #111;
+  --primary-dark: #000;
+  --bg: #222;
+  --text: #eee;
+}
+
+body.green {
+  --primary: #28a745;
+  --primary-dark: #1e7e34;
+  --bg: #f4fff4;
+  --text: #222;
+}
+
+body.purple {
+  --primary: #6f42c1;
+  --primary-dark: #563d7c;
+  --bg: #f8f4ff;
+  --text: #222;
+}
